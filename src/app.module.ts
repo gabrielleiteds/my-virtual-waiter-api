@@ -6,9 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(
-      'mongodb+srv://leitedasilvag:sMypuHBmjc1IcHUQ@cluster-nestjs-test.ipvrhet.mongodb.net/?retryWrites=true&w=majority',
-    ),
+    MongooseModule.forRoot(process.env.DATABASE_HOST),
     TablesModule,
   ],
   controllers: [],
